@@ -83,36 +83,36 @@ booking new academy for member, submember or not member
 
     __data attributes__
 
-    | key                   | Description                                                        | value                                  |
-    |-----------------------|--------------------------------------------------------------------|----------------------------------------|
-    | customer              | Member named                                                       | Member named                           |
-    | rent                  | unknown                                                            | Yes|No                                 |
-    | rent_date             | unknown                                                            | YYYY-MM-DD                             |
-    | first_name            | Member first name                                                  | Member first name                      |
-    | middle_name           | member middle name                                                 | member middle name                     |
-    | last_name             | member last name                                                   | member last name                       |
-    | program               | the name of available program to which the member can subscript to | program name                           |
-    | student_category      | the category of the member (Member, submember or Not a member)     | member category name                   |
-    | lms_only              | unknown                                                            | 0 or 1                                  |
-    | paid                  | unknown                                                            | 0 or 1                                  |
-    | academic_year         | unknown                                                            | YYYY                                   |
-    | academic_term         | the name of the sport to which the member wants to subscript to    | sport name                             |
-    | student_admission     | unknow                                                             | name of student_admission              |
-    | date_of_birth         | the Member birth date                                              | YYYY-MM-DD                             |
-    | customer_gender       | the member gender                                                  | ذكر  or   انثي                           |
-    | blood_group           | the member blood type                                              | A+   A- - B+ - B- - O+ - O- - AB+ - AB- |
-    | student_email_id      | Member email address                                               | email                                  |
-    | student_mobile_number | Member mobile numer                                                | mobile number                           |
-    | nationality           | the member nationality                                             | text                                   |
-    | customer       | Member named                       | Member named      |
-    | rent           | unknown                            | Yes or No         |
-    | rent_date      | unknown                            | YYYY-MM-DD        |
-    | first_name     | Member first name                  | Member first name |
-    | address_line_1 | the member address                 | text              |
-    | address_line_2 | the member second address (option) | text              |
-    | pincode        | unknow                             | number            |
-    | city           | the member city                    | text              |
-    | state          | the member state                   | text              |
+    | key                   | Description                                                        | value                           |
+    |-----------------------|--------------------------------------------------------------------|---------------------------------|
+    | customer              | Member named (in case he is a member)                              | Member named                    |
+    | rent                  | unknown                                                            | Yes  or  No                     |
+    | rent_date             | unknown                                                            | YYYY-MM-DD                      |
+    | first_name            | Member first name                                                  | Member first name               |
+    | middle_name           | member middle name                                                 | member middle name              |
+    | last_name             | member last name                                                   | member last name                |
+    | program               | the name of available program to which the member can subscript to | program name                    |
+    | student_category      | the category of the member (Member, submember or Not a member)     | member category name            |
+    | lms_only              | unknown                                                            | 0 or 1                          |
+    | paid                  | unknown                                                            | 0 or 1                          |
+    | academic_year         | unknown                                                            | YYYY                            |
+    | academic_term         | the name of the sport to which the member wants to subscript to    | sport name                      |
+    | student_admission     | unknow                                                             | name of student_admission       |
+    | date_of_birth         | the Member birth date                                              | YYYY-MM-DD                      |
+    | customer_gender       | the member gender                                                  | ذكر  or   انثي                  |
+    | blood_group           | the member blood type                                              | A+   A- B+  B-  O+  O-  AB+  AB |
+    | student_email_id      | Member email address                                               | email                           |
+    | student_mobile_number | Member mobile numer                                                | mobile number                   |
+    | nationality           | the member nationality                                             | text                            |
+    | customer              | Member named                                                       | Member named                    |
+    | rent                  | unknown                                                            | Yes or No                       |
+    | rent_date             | unknown                                                            | YYYY-MM-DD                      |
+    | first_name            | Member first name                                                  | Member first name               |
+    | address_line_1        | the member address                                                 | text                            |
+    | address_line_2        | the member second address (option)                                 | text                            |
+    | pincode               | unknow                                                             | number                          |
+    | city                  | the member city                                                    | text                            |
+    | state                 | the member state                                                   | text                            |
 
 
 
@@ -295,21 +295,22 @@ get main member information
 
 * body: {form-data}
 
-	| key     | value                                                                                                       |
-	|---------|-------------------------------------------------------------------------------------------------------------|
-	| fields  | ["name", "mobile_no",  "customer_group", "personal_identification_number", "release_date2", "expiry_date2"] |
-	| filters | [["name", "=", "{customer name}"]]                                                                                       |
+    | key     | value                                                                                                       |
+    |---------|-------------------------------------------------------------------------------------------------------------|
+    | fields  | ["name", "mobile_no",  "customer_group", "personal_identification_number", "release_date2", "expiry_date2"] |
+    | filters | [["name", "=", "{customer name}"]]                                                                          |
+    |         |                                                                                                             |
 
-    * attributes: 
+	* attributes: 
         
-        __filter__ : on which the data will be filtered
+		__filter__ : on which the data will be filtered
 
-        * name: {customer name}
+	* name: {Member name}
     
-        __fields__ : data fields on the response
+		__fields__ : data fields on the response
         
-        * name: the customer name
-        * mobile_no: the member mobile number
+		* name: the member name
+		* mobile_no: the member mobile number
 		* customer_group: the member type
 		* personal_identification_number: membership number
 		* release_date2: the membership release date
@@ -327,16 +328,70 @@ get main member information
 	* response
 	
 	```json
-	{
-	"data": [
-        {
-            "name": "وليد شعبان محسن راضي",
-            "mobile_no": "1002016587",
-            "customer_group": "عضوية عاملة",
-            "personal_identification_number": "28310152104078",
-            "release_date2": "2022-03-10",
-            "expiry_date2": "2022-03-14"
-        }
-		]
-	}
+		{
+		"data": [
+			{
+				"name": "وليد شعبان محسن راضي",
+				"mobile_no": "1002016587",
+				"customer_group": "عضوية عاملة",
+				"personal_identification_number": "28310152104078",
+				"release_date2": "2022-03-10",
+				"expiry_date2": "2022-03-14"
+			}
+			]
+		}
+	```
+	
+	
+
+
+get submember information
+
+* url: {base url}/api/resource/Address
+
+* body: {form-data}
+
+    | key     | value                                                                                     |
+    |---------|-------------------------------------------------------------------------------------------|
+    | fields  | ["main_member","full_name", "phone",  "customer_group", "personal_identification_number"] |
+    | filters | [["full_name", "=", "{Member full name}"]]                                                |
+
+    * attributes: 
+        
+	__filter__ : on which the data will be filtered
+		
+	* full_name: {Member full name}
+    
+	__fields__ : data fields on the response
+        
+	* main_member: main member's  membership number
+	* full_name: the member full name
+	* mobile_no: the member mobile number
+	* customer_group: the membership type
+	* personal_identification_number: membership number
+	(hint: release date and expiry date the same as main member date)
+
+* sample:
+
+  ```bash
+	  curl --location --request GET  {base url}/api/resource/Address' \
+	  --header 'Authorization: token token api_key:api_secret' \
+	  --form 'fields="[\"main_member\", \"full_name\", \"phone\",  \"customer_group\", \"personal_identification_number\"]"' \
+	  --form 'filters="[[\"full_name\", \"=\",\"لى لى عبداللطيف صبحى\"]]"'
+  ```
+
+	* respose
+	
+	```json
+		{
+		"data": [
+			{
+				"main_member": "102",
+				"full_name": "لى لى عبداللطيف صبحى",
+				"phone": null,
+				"customer_group": "عضو تابع",
+				"personal_identification_number": "31101140600384"
+			}
+			]
+		}
 	```
