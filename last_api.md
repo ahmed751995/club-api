@@ -285,9 +285,11 @@ change member or submember email address email address
 
 
 ## Information
-get main member information
+
+### get main member information
 
 * [GET/member]()
+
 
 * method: __GET__
 
@@ -345,7 +347,11 @@ get main member information
 	
 
 
-get submember information
+### get submember information
+
+* [GET/member]()
+
+* method: __GET__
 
 * url: {base url}/api/resource/Address
 
