@@ -86,18 +86,18 @@ booking new academy for member, submember or not member
     | key                   | Description                                                        | value                           |
     |-----------------------|--------------------------------------------------------------------|---------------------------------|
     | customer              | Member named (in case he is a member)                              | Member named                    |
-    | rent                  | unknown                                                            | Yes  or  No                     |
-    | rent_date             | unknown                                                            | YYYY-MM-DD                      |
+    | rent                  | is it rent or not                                                  | Yes  or  No                     |
+    | rent_date             | rent date in iso format                                            | YYYY-MM-DD                      |
     | first_name            | Member first name                                                  | Member first name               |
     | middle_name           | member middle name                                                 | member middle name              |
     | last_name             | member last name                                                   | member last name                |
     | program               | the name of available program to which the member can subscript to | program name                    |
     | student_category      | the category of the member (Member, submember or Not a member)     | member category name            |
-    | lms_only              | unknown                                                            | 0 or 1                          |
-    | paid                  | unknown                                                            | 0 or 1                          |
-    | academic_year         | unknown                                                            | YYYY                            |
+    | lms_only              | the value of lms yes = 1 and 0 = no                                | 0 or 1                          |
+    | paid                  | paid or not where paid = 1                                         | 0 or 1                          |
+    | academic_year         | academic year                                                      | YYYY                            |
     | academic_term         | the name of the sport to which the member wants to subscript to    | sport name                      |
-    | student_admission     | unknow                                                             | name of student_admission       |
+    | student_admission     | name of student                                                    | name of student_admission       |
     | date_of_birth         | the Member birth date                                              | YYYY-MM-DD                      |
     | customer_gender       | the member gender                                                  | ذكر  or   انثي                  |
     | blood_group           | the member blood type                                              | A+   A- B+  B-  O+  O-  AB+  AB |
@@ -105,12 +105,11 @@ booking new academy for member, submember or not member
     | student_mobile_number | Member mobile numer                                                | mobile number                   |
     | nationality           | the member nationality                                             | text                            |
     | customer              | Member named                                                       | Member named                    |
-    | rent                  | unknown                                                            | Yes or No                       |
-    | rent_date             | unknown                                                            | YYYY-MM-DD                      |
+    | rent                  | rent or not                                                        | Yes or No                       |
+    | rent_date             | rent date                                                          | YYYY-MM-DD                      |
     | first_name            | Member first name                                                  | Member first name               |
     | address_line_1        | the member address                                                 | text                            |
     | address_line_2        | the member second address (option)                                 | text                            |
-    | pincode               | unknow                                                             | number                          |
     | city                  | the member city                                                    | text                            |
     | state                 | the member state                                                   | text                            |
 
