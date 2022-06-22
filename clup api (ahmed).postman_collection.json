@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "80f43aef-ea32-4c20-aeb0-2da854c7e2b3",
+		"name": "clup api (ahmed)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Subscriptions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "\"filters\"",
+							"value": "[[\"status\", \"=\", \"UnPaid\"], [\"customer\", \"=\", \"احمد سيد حسونه حسان\"]]",
+							"type": "default"
+						},
+						{
+							"key": "\"fields\"",
+							"value": "[\"name\", \"grand_total\"]",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/resource/Sales Invoice",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"resource",
+						"Sales Invoice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking Academy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"customer\": \"محمد محمود احمد محمد البيلاوى\",\n        \"rent\": \"Yes\",\n        \"rent_date\": \"2022-03-31\",\n        \"first_name\": \"محمد محمود احمد محمد البيلاوى\",\n        \"program\": \"برنامج ايجار ملعب\",\n        \"academic_term\": \"UFC Gym\",\n        \"student_category\": \"عضو النادي - كبار\",\n        \"paid\": \"1\",\n        \"customer_gender\": \"ذكر\",\n        \"student_mobile_number\": \"12313\",\n        \"address_line_1\": \"م 34 كمبوند المنتزه-جنوب الاحياء-6اكتوبر\",\n        \"pin_code\": \"12332\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/resource/Student Applicant",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"resource",
+						"Student Applicant"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "token dfc4dbec3968677:8251bd8c76d05ce",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://103.136.40.46:72",
+			"type": "default"
+		}
+	]
+}
